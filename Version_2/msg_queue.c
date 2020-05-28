@@ -86,7 +86,7 @@ void fill_msg_queue(int msg_id){
     // Japanase 
   
   
-        strcpy(fileName,"Japanese/Haiku_");
+        strcpy(fileName,"../Japanese/Haiku_");
 
     for(int i=1;i<=6;i++){
         char nb[2];
@@ -118,7 +118,7 @@ void fill_msg_queue(int msg_id){
     
 
        // Western
-    strcpy(fileName,"Western/Haiku_");
+    strcpy(fileName,"../Western/Haiku_");
 
     for(int i=1;i<=9;i++){
         char nb[2];
@@ -152,6 +152,7 @@ void read_haiku(int msg_id,int category){
 
     int n; // number of readed bytes
     // msgrcv for receiving message from identified queue
+
     while(1){
         n=msgrcv(msg_id,&msg,sizeof(message),0,0);
 
@@ -162,6 +163,7 @@ void read_haiku(int msg_id,int category){
         }
 
         if(msg.msg_type == category){
+           
             break;
         }
 
