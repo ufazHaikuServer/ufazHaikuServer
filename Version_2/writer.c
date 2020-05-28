@@ -11,15 +11,14 @@ void main(){
 
     rc = msgctl(msg_id, IPC_STAT, &buf);
     printf("loading");
-    fill_msg_queue(msg_id);
-     printf("%ld\n",buf.msg_qnum );
-  /*  while(1){
+   
+   while(1){
 
         if(buf.msg_qnum == 0){
             fill_msg_queue(msg_id);
         }
         printf("%ld\n",buf.msg_qnum );
-    }*/
+    }
 
 
 

@@ -1,7 +1,7 @@
 #include "msg_queue.h"
 
 
-void main(){
+int main(){
 
 
     int msg_id;
@@ -21,8 +21,11 @@ void main(){
 
     for(int i=0;i<10;i++){
         read_haiku(msg_id,arr[i]);
+        sleep(1);
     }
 
+
+return 0;
 
 
 }

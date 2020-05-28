@@ -6,7 +6,7 @@ int create_queue(void){
     //id for identifying created queue
     int msg_id;
     //converting pathname to unique identifier
-    key=ftok("titi",'E');
+    key=ftok("/etc/passwd",'E');
 
     if(key==-1) perror("ftok");
     
@@ -27,7 +27,7 @@ int access_queue(void){
     key_t key;
     int msg_id;
 
-    key=ftok("toto",'E');
+    key=ftok("/etc/passwd",'E');
 
     if(key==-1) perror("ftok");
     
