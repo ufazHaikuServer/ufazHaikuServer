@@ -1,10 +1,11 @@
-#include "server_client.h"
+#include "../Version_1/shared.h"
+#include "../Version_2/msg_queue.h"
 
 
 int main(){
 
      pid_t *pid=create_shared_memory();
-     send_signal(*pid, 10);
+     send_signal(*pid, 100);
 
 
     int msg_id;
@@ -20,9 +21,9 @@ int main(){
 
         if(buf.msg_qnum == 0){
             fill_msg_queue(msg_id);
-             //printf("loadiiiiiiiiing\n");
+            // printf("loadiiiiiiiiing\n");
         }
-     //  printf("%ld\n",buf.msg_qnum );
+
     }
 
 

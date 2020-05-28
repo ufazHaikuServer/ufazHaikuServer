@@ -21,6 +21,7 @@ typedef struct message{
 
 
 
+
 int create_queue(void);
 int access_queue(void);
 void remove_queue(int msg_id);

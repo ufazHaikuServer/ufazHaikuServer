@@ -16,10 +16,11 @@ int matrix[2][100];
 int signal_counter;
 
 
+
 int *create_shared_memory();
 void send_signal(pid_t pid, int nb_signal);
 void receive_signal();
-void print(int i, int j,int matrix[i][j]);
+void print(int a, int b,int matrix[a][b]);
 void  SIGINT_handler(int sig);
 void  SIGQUIT_handler(int sig);
 void delay(int sec);

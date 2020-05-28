@@ -152,6 +152,7 @@ void read_haiku(int msg_id,int category){
 
     int n; // number of readed bytes
     // msgrcv for receiving message from identified queue
+
     while(1){
         n=msgrcv(msg_id,&msg,sizeof(message),0,0);
 
@@ -162,6 +163,7 @@ void read_haiku(int msg_id,int category){
         }
 
         if(msg.msg_type == category){
+           
             break;
         }
 

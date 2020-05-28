@@ -47,9 +47,14 @@ void send_signal(pid_t pid, int nb_signal) {
 }
 }
 
-void print(int i, int j, int matrix[i][j]){
-     for(int i=0;i<2;i++){
-          for(int j=0;j<100;j++){
+void print(int a, int b, int matrix[a][b]){
+     for(int i=0;i<a;i++){
+          if(i==0){
+               printf("Japanese |");
+          }else{
+               printf("Western  |");
+          }
+          for(int j=0;j<b;j++){
                if(matrix[i][j] != 0){
                printf("%d |",matrix[i][j]);
                }
@@ -63,6 +68,7 @@ void print(int i, int j, int matrix[i][j]){
 void  SIGINT_handler(int sig)
 {
      signal(sig, SIG_IGN);
+     printf("==========================================\n");
      printf("From SIGINT: just got a %d (SIGINT ^C) signal\n", sig);
      signal(sig, SIGINT_handler);
      signal_counter++;
@@ -75,6 +81,7 @@ void  SIGINT_handler(int sig)
 void  SIGQUIT_handler(int sig)
 {
      signal(sig, SIG_IGN);
+     printf("==========================================\n");
      printf("From SIGQUIT: just got a %d (SIGQUIT ^\\) signal"
                           " and is about to quit\n", sig);
      shmdt(pid);
