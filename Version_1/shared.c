@@ -65,8 +65,9 @@ void  SIGINT_handler(int sig)
      signal(sig, SIG_IGN);
      printf("From SIGINT: just got a %d (SIGINT ^C) signal\n", sig);
      signal(sig, SIGINT_handler);
+     signal_counter++;
      matrix[0][i++] = counter++;
-          print(2,100,matrix);
+         // print(2,100,matrix);
      shmdt(pid);
      
 }
@@ -77,8 +78,9 @@ void  SIGQUIT_handler(int sig)
      printf("From SIGQUIT: just got a %d (SIGQUIT ^\\) signal"
                           " and is about to quit\n", sig);
      shmdt(pid);
+     signal_counter++;
      matrix[1][j++]=counter++;
-           print(2,100,matrix);
+         //  print(2,100,matrix);
 }
 
 

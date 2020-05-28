@@ -13,7 +13,7 @@
 
 pid_t *pid;
 int matrix[2][100];
-
+int signal_counter;
 
 
 int *create_shared_memory();
