@@ -110,13 +110,13 @@ void print(int a, int b, int matrix[a][b]){
 }
 
 /*
-     Function to receive SIGINT and handle it
+     Function to receive SIGINT and store it in the matrix under Haiku category Japanese
 */
 void  SIGINT_handler(int sig)
 {
      signal(sig, SIG_IGN);
      printf("==========================================\n");
-     printf("Signal number %d => from SIGINT: just got a %d (SIGINT ^C) signal\n", signal_counter , sig);
+     printf("Signal number %d => from SIGINT: just got a %d (SIGINT ^C) signal\n", signal_counter+1 , sig);
      signal(sig, SIGINT_handler);
      
      shmdt(pid);
@@ -133,13 +133,13 @@ void  SIGINT_handler(int sig)
 }
 
 /*
-     Function to receive SIGQUIT and handle it
+     Function to receive SIGQUIT and store it in the matrix under Haiku category Western
 */
 void  SIGQUIT_handler(int sig)
 {
      signal(sig, SIG_IGN);
      printf("==========================================\n");
-     printf("Signal number %d => frrom SIGQUIT: just got a %d (SIGQUIT ^\\) signal\n", signal_counter, sig);
+     printf("Signal number %d => frrom SIGQUIT: just got a %d (SIGQUIT ^\\) signal\n", signal_counter+1, sig);
 
      shmdt(pid);
      
