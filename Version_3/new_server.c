@@ -7,7 +7,7 @@ int main(){
 
     pid=create_shared_memory();
     *pid = getpid();
-    printf("==========================================\n");
+    printf("\n==========================================\n");
     printf("Now server is receiving signals from client. It will take a little bit time. Please, wait\n");
     printf("==========================================\n");
     while(signal_counter<100) {
