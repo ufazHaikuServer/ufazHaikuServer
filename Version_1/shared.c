@@ -67,7 +67,7 @@ void send_signal(pid_t pid) {
 
                //sends a signal from client to server
                kill(pid, SIGINT);
-               printf("Sent a SIGINT signal\n");
+               printf("\nSent a SIGINT signal\n");
                delay(300);
           }
           // 2 for SIGQUIT (haiku category - Western)
@@ -75,7 +75,7 @@ void send_signal(pid_t pid) {
 
                //sends a signal from client to server
                kill(pid, SIGQUIT);     
-               printf("Sent a SIGQUIT signal\n");
+               printf("\nSent a SIGQUIT signal\n");
                delay(300);
           }
      }
