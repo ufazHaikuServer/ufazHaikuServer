@@ -123,7 +123,7 @@ void fill_msg_queue(int msg_id){
         // copying fileName to fullName for avoiding the loss of constant fileName
         strcpy(fullName,fileName);
 
-        // getting fullName by concatinating fullname and number ( "../Japanese/Haiku_" + "2" = "../Japanese/Haiku_2")
+        // getting fullName by concatenating fullname and number ( "../Japanese/Haiku_" + "2" = "../Japanese/Haiku_2")
         strcat(fullName,nb);       
     
         // opening file
