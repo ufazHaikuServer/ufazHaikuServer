@@ -86,7 +86,7 @@ void send_signal(pid_t pid) {
      Function for printing matrix which holds signal orders in respect to Haiku category
 */
 
-void print(int a, int b, int matrix[a][b]){
+void print(int haiku_category, int b,int matrix[haiku_category][b]){
 
      for(int i=0;i<a;i++){
           
