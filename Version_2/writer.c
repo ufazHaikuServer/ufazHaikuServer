@@ -29,6 +29,7 @@ void main(){
         // if there is 0 Haiku in message queue, refill it
         if(buf.msg_qnum == 0){
             fill_msg_queue(msg_id);
+              printf("========================================\n");
               printf("Haikus are loading to the message queue\n");
         }
         

@@ -62,12 +62,13 @@ void send_signal(pid_t pid) {
 
          //printf("%d\n", sig_type);
 
+          printf("========================================\n");
           // 1 for SIGINT (haiku category - Japanese)
           if (sig_type == 1) {  
 
                //sends a signal from client to server
                kill(pid, SIGINT);
-               printf("\nSent a SIGINT signal\n");
+               printf("Sent a SIGINT signal\n");
                delay(300);
           }
           // 2 for SIGQUIT (haiku category - Western)
@@ -75,7 +76,7 @@ void send_signal(pid_t pid) {
 
                //sends a signal from client to server
                kill(pid, SIGQUIT);     
-               printf("\nSent a SIGQUIT signal\n");
+               printf("Sent a SIGQUIT signal\n");
                delay(300);
           }
      }
@@ -88,7 +89,7 @@ void send_signal(pid_t pid) {
 
 void print(int haiku_category, int b,int matrix[haiku_category][b]){
 
-     for(int i=0;i<a;i++){
+     for(int i=0;i<haiku_category;i++){
           
           // matrix[0][b] => Japanese
           if(i==0){
@@ -115,7 +116,7 @@ void print(int haiku_category, int b,int matrix[haiku_category][b]){
 void  SIGINT_handler(int sig)
 {
      signal(sig, SIG_IGN);
-     printf("==========================================\n");
+     printf("=====================================================================\n");
      printf("Signal number %d => from SIGINT: just got a %d (SIGINT ^C) signal\n", signal_counter+1 , sig);
      signal(sig, SIGINT_handler);
      
@@ -138,7 +139,7 @@ void  SIGINT_handler(int sig)
 void  SIGQUIT_handler(int sig)
 {
      signal(sig, SIG_IGN);
-     printf("==========================================\n");
+     printf("=====================================================================\n");
      printf("Signal number %d => frrom SIGQUIT: just got a %d (SIGQUIT ^\\) signal\n", signal_counter+1, sig);
 
      shmdt(pid);
