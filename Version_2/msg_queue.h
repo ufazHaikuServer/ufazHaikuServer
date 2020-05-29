@@ -1,3 +1,6 @@
+/*
+This header file is for holding the global variables and the function declarations to be used by writer and reader.
+*/
 
 #include <stdio.h>
 #include <sys/ipc.h>
@@ -8,13 +11,16 @@
 #include <sys/types.h>
 #include <errno.h>
 
-
-
+// Capacity of message text
 #define MAX 2048
 
-//Data for message
+
+//Structure of message
 typedef struct message{
+
+    // Haiku category
     long msg_type; 
+    
     char msg_text[MAX];
 
 }message;
