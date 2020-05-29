@@ -26,7 +26,6 @@ int main(){
     // Receiving and printing signals for signal number for SIGNAL_NUMBER times                                                                                                                                                            
     while(signal_counter<SIGNAL_NUMBER) {
         receive_signal();
-        sleep(1);
     }
     
     // Printing Haiku category matrix after receiving all signals 
@@ -72,7 +71,7 @@ int main(){
 
             read_haiku(msg_id,haiku_category);
    
-        sleep(1);
+            delay(500);
         }
     }
 

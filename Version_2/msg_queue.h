@@ -2,6 +2,9 @@
 This header file is for holding the global variables and the function declarations to be used by writer and reader.
 */
 
+#ifndef MSG_QUEUE
+#define MSG_QUEUE
+
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
@@ -10,6 +13,7 @@ This header file is for holding the global variables and the function declaratio
 #include <unistd.h>
 #include <sys/types.h>
 #include <errno.h>
+#include <time.h>
 
 // Capacity of message text
 #define MAX 2048
@@ -37,3 +41,4 @@ void read_haiku(int msg_id,int category);
 
 
 
+#endif

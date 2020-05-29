@@ -2,6 +2,9 @@
 This header file is for holding the global variables and the function declarations to be used by server and client.
 */
 
+#ifndef SHARED
+#define SHARED
+
 #include  <stdio.h>
 #include <stdlib.h>
 #include  <sys/types.h>
@@ -33,5 +36,6 @@ void receive_signal();
 void print(int haiku_category, int b,int matrix[haiku_category][b]);
 void SIGINT_handler(int sig);
 void SIGQUIT_handler(int sig);
+void delay(int second);
 
-//void delay(int sec);
+#endif

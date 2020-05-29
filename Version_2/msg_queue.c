@@ -56,7 +56,7 @@ int access_queue(void){
 
 
 /*
-    Function for removing queue after sending message
+    Function for removing queue after finishing our job on queue
 */
 void remove_queue(int msg_id){
 
@@ -97,13 +97,13 @@ void write_haiku(int msg_id,char msg_text[],int msg_type){
 
 
 /*
-    Filling nessage queue by reading Haikus from files and writing them to message queue with their category
+    Filling message queue by reading Haikus from files and writing them to message queue with their category
 */
 void fill_msg_queue(int msg_id){
 
 
     FILE *fp;
-    char haiku[MAX];
+    char haiku[MAX]= " ";
     char* line = NULL;
     char  fileName[50];
     char  fullName[50]; 
@@ -231,3 +231,6 @@ void read_haiku(int msg_id,int category){
     printf("%s",msg.msg_text);
 
 }
+
+
+

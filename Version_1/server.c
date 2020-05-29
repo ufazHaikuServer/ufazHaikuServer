@@ -15,7 +15,6 @@ int main(void)
   while(signal_counter<SIGNAL_NUMBER) {
 
     receive_signal();
-    sleep(1);
 
   }
 

@@ -4,6 +4,7 @@
 #include "msg_queue.h"
 
 
+
 int main(){
 
 
@@ -33,7 +34,7 @@ int main(){
             
         }
 
-        sleep(1);
+       sleep(1);
     }
 
     // removing message queue after all works were done
