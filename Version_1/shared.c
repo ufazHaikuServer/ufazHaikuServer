@@ -68,7 +68,7 @@ void send_signal(pid_t pid) {
                //sends a signal from client to server
                kill(pid, SIGINT);
                printf("Sent a SIGINT signal\n");
-               sleep(1);
+               delay(300);
           }
           // 2 for SIGQUIT (haiku category - Western)
           else if (sig_type == 2) {
@@ -76,7 +76,7 @@ void send_signal(pid_t pid) {
                //sends a signal from client to server
                kill(pid, SIGQUIT);     
                printf("Sent a SIGQUIT signal\n");
-               sleep(1);
+               delay(300);
           }
      }
 }
@@ -172,12 +172,16 @@ void receive_signal(){
 }
 
 
+
 /*
-void delay(int sec){
- struct timespec req = {0};
- req.tv_sec = 0;
- req.tv_nsec = sec * 1000000000L;
- nanosleep(&req, (struct timespec*)NULL); 
- 
-}
+     Function to sleep for given second
 */
+void delay(int second){
+
+     int milsec = 1000 * second;
+
+     clock_t startTime = clock();
+
+     while(clock() < (startTime + milsec));
+
+}
