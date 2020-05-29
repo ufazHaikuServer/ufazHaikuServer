@@ -67,7 +67,7 @@ void send_signal(pid_t pid) {
 
                //sends a signal from client to server
                kill(pid, SIGINT);
-               printf("Sent a SIGINT signal\n");
+               printf("\nSent a SIGINT signal\n");
                delay(300);
           }
           // 2 for SIGQUIT (haiku category - Western)
@@ -75,7 +75,7 @@ void send_signal(pid_t pid) {
 
                //sends a signal from client to server
                kill(pid, SIGQUIT);     
-               printf("Sent a SIGQUIT signal\n");
+               printf("\nSent a SIGQUIT signal\n");
                delay(300);
           }
      }
@@ -86,7 +86,7 @@ void send_signal(pid_t pid) {
      Function for printing matrix which holds signal orders in respect to Haiku category
 */
 
-void print(int a, int b, int matrix[a][b]){
+void print(int haiku_category, int b,int matrix[haiku_category][b]){
 
      for(int i=0;i<a;i++){
           
